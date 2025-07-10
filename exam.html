@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ exam.title }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Exam Invigilation System</h1>
+        <h2>{{ exam.title }}</h2>
+    </header>
+    <div id="warning-box" class="warning-box"></div>
+    <div id="webcam-area" class="webcam-area">
+        <video id="webcam" width="320" height="240" autoplay muted playsinline style="border-radius:8px; background:#222;"></video>
+        <canvas id="overlay" width="320" height="240" style="position:absolute; left:0; top:0;"></canvas>
+    </div>
+    <div id="question-container" class="question-area"></div>
+    <script src="/static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="/static/face_proctor_classic.js"></script>
+    <script>
+        // Load shuffled questions
+        fetch(`/api/exam/{{ exam.id }}/questions`)
+            .then(res => res.json())
+            .then(data => showQuestions(data.questions));
+    </script>
+</body>
+</html>

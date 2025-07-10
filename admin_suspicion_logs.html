@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suspicion Logs - Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Exam Invigilation System</h1>
+        <h2>Suspicion Event Logs</h2>
+        <a href="/admin">Back to Admin Panel</a>
+    </header>
+    <main style="max-width:900px;margin:2em auto;">
+        {% if logs and logs|length > 0 %}
+            {% for log in logs %}
+                <section class="admin-section" style="margin-bottom:2em;">
+                    <h3>Exam: {{ exams[log.exam_id-1].title if exams[log.exam_id-1] else log.exam_id }} | Submitted: {{ log.timestamp }}</h3>
+                    <table style="width:100%;border-collapse:collapse;">
+                        <thead>
+                            <tr style="background:#f0f0f0;">
+                                <th style="padding:0.5em 1em;">#</th>
+                                <th style="padding:0.5em 1em;">Event Type</th>
+                                <th style="padding:0.5em 1em;">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for event in log.events %}
+                            <tr>
+                                <td style="padding:0.5em 1em;">{{ loop.index }}</td>
+                                <td style="padding:0.5em 1em;">{{ event.type }}</td>
+                                <td style="padding:0.5em 1em;">{{ event.timestamp }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            {% endfor %}
+        {% else %}
+            <p>No suspicion logs submitted yet.</p>
+        {% endif %}
+    </main>
+</body>
+</html> 

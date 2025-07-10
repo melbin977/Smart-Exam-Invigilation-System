@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student - Exams</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Exam Invigilation System</h1>
+        <h2>Available Exams</h2>
+    </header>
+    <div class="exam-list">
+        {% for exam in exams %}
+        <div class="exam-card">
+            <h3>{{ exam.title }}</h3>
+            <a class="start-btn" href="/exam/{{ exam.id }}">Start Exam</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+  "exams": [
+    {
+      "id": 1,
+      "title": "Computer Networks",
+      "questions": [
+        {"q": "What does TCP stand for?", "options": ["Transmission Control Protocol", "Transfer Communication Protocol", "Total Control Protocol"], "answer": "Transmission Control Protocol"},
+        {"q": "Which device forwards packets between networks?", "options": ["Switch", "Router", "Hub"], "answer": "Router"},
+        {"q": "What is the default port for HTTP?", "options": ["80", "21", "443"], "answer": "80"},
+        {"q": "Which layer is responsible for end-to-end communication?", "options": ["Transport", "Network", "Data Link"], "answer": "Transport"},
+        {"q": "What is the main function of DNS?", "options": ["Translate domain names to IP addresses", "Encrypt data", "Route packets"], "answer": "Translate domain names to IP addresses"}
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Operating System",
+      "questions": [
+        {"q": "Which of these is not an OS?", "options": ["Linux", "Windows", "Oracle"], "answer": "Oracle"},
+        {"q": "What is a process?", "options": ["A program in execution", "A type of memory", "A hardware device"], "answer": "A program in execution"},
+        {"q": "Which scheduling algorithm gives minimum average waiting time?", "options": ["FCFS", "SJF", "Round Robin"], "answer": "SJF"},
+        {"q": "What is a deadlock?", "options": ["Infinite loop", "Two or more processes waiting indefinitely", "Memory leak"], "answer": "Two or more processes waiting indefinitely"},
+        {"q": "Which is not a function of OS?", "options": ["Memory management", "Compiler design", "File management"], "answer": "Compiler design"}
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Java",
+      "questions": [
+        {"q": "Which company developed Java?", "options": ["Sun Microsystems", "Microsoft", "Apple"], "answer": "Sun Microsystems"},
+        {"q": "What is JVM?", "options": ["Java Virtual Machine", "Java Variable Method", "Java Visual Model"], "answer": "Java Virtual Machine"},
+        {"q": "Which keyword is used to inherit a class in Java?", "options": ["extends", "implements", "inherits"], "answer": "extends"},
+        {"q": "Which method is the entry point of a Java program?", "options": ["main", "start", "run"], "answer": "main"},
+        {"q": "Which of these is not a Java primitive type?", "options": ["int", "float", "string"], "answer": "string"}
+      ]
+    },
+    {
+      "id": 4,
+      "title": "DSA",
+      "questions": [
+        {"q": "Which data structure uses FIFO?", "options": ["Stack", "Queue", "Tree"], "answer": "Queue"},
+        {"q": "What is the time complexity of binary search?", "options": ["O(n)", "O(log n)", "O(n^2)"], "answer": "O(log n)"},
+        {"q": "Which sorting algorithm is NOT comparison-based?", "options": ["Merge Sort", "Quick Sort", "Counting Sort"], "answer": "Counting Sort"},
+        {"q": "Which data structure is used for recursion?", "options": ["Queue", "Stack", "Heap"], "answer": "Stack"},
+        {"q": "Which traversal is used for BFS in a graph?", "options": ["Stack", "Queue", "Recursion"], "answer": "Queue"}
+      ]
+    }
+  ]
+}

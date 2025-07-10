@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Exams</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Exam Invigilation System</h1>
+        <h2>Admin Panel</h2>
+        <a href="/admin/suspicion_logs" class="suspicion-log-btn">View Suspicion Logs</a>
+    </header>
+    <main class="admin-main">
+        <section class="admin-section">
+            <h3>Create New Exam</h3>
+            <form method="POST" action="/admin" class="admin-form">
+                <input type="text" name="title" placeholder="Exam Title" required>
+                <button type="submit">Create Exam</button>
+            </form>
+        </section>
+        <section class="admin-section">
+            <h3>Add Question to Exam</h3>
+            <form method="POST" action="/admin/add_question" class="admin-form">
+                <label>Exam:
+                    <select name="exam_id" required>
+                        {% for exam in exams %}
+                        <option value="{{ exam.id }}">{{ exam.title }}</option>
+                        {% endfor %}
+                    </select>
+                </label>
+                <input type="text" name="q" placeholder="Question" required>
+                <div class="admin-options">
+                    <input type="text" name="opt1" placeholder="Option 1" required>
+                    <input type="text" name="opt2" placeholder="Option 2" required>
+                    <input type="text" name="opt3" placeholder="Option 3" required>
+                </div>
+                <input type="text" name="answer" placeholder="Correct Answer" required>
+                <button type="submit">Add Question</button>
+            </form>
+        </section>
+        <section class="admin-section">
+            <h3>Available Exams & Questions</h3>
+            <div class="exam-list">
+                {% for exam in exams %}
+                <div class="exam-card admin-exam-card">
+                    <h4>{{ exam.title }}</h4>
+                    <ul class="question-list">
+                        {% for q in exam.questions %}
+                        <li><b>Q:</b> {{ q.q }}<br>
+                            <span class="admin-options-list">Options: {{ q.options|join(', ') }}</span><br>
+                            <span class="admin-answer">Answer: {{ q.answer }}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

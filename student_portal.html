@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Portal - Smart Exam Invigilation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Smart Exam Invigilation System</div>
+        <div class="navbar-links">
+            <a href="/">Home</a>
+            <a href="/admin">Admin Portal</a>
+            <a href="/student">Student Portal</a>
+            <a href="/admin/suspicion_logs">Suspicion Logs</a>
+            <a href="/about">About Us</a>
+        </div>
+    </nav>
+    <header class="home-header" style="padding:2em 1em 1em 1em;">
+        <h1>Student Portal</h1>
+        <p class="subtitle">View and start available exams below</p>
+    </header>
+    <main class="dashboard-main">
+        <div class="feature-cards">
+            {% for exam in exams %}
+            <div class="feature-card">
+                <h2>{{ exam.title }}</h2>
+                <a href="/exam/{{ exam.id }}" class="feature-btn">Start Exam</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html> 
